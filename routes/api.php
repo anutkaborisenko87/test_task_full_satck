@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::fallback(function () {
     abort(404);
 });
+
+Route::get('/testimonials', [TestimonialController::class, 'index']);

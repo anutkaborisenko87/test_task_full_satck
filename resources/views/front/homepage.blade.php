@@ -66,17 +66,6 @@
     <div id="app">
         <testimonial-list-component></testimonial-list-component>
     </div>
-    <div>
-        <div class="pagination">
-            <a href="#" class="prev"><span class="icon-ArrowLeft"></span></a>
-            <a href="#" class="page active">1</a>
-            <a href="#" class="page">2</a>
-            <a href="#" class="page">3</a>
-            ...
-            <a href="#" class="page">23</a>
-            <a href="#" class="next"><span class="icon-ArrowRight"></span></a>
-        </div>
-    </div>
     <footer>
         <div class="footer-columns">
             <div class="column">

@@ -1,30 +1,36 @@
 import service from '../services/testmonials-service';
 const state = {
-    usersList: {}
+    testimonialsList: {},
+    meta: {}
 };
 const mutations = {
-    SET_USERS_LIST: (state, usersList) => {
-        state.usersList = usersList;
-    }
+    SET_TESTIMONIALS_LIST: (state, testimonialsList) => {
+        state.testimonialsList = testimonialsList;
+    },
+    SET_META: (state, meta) => {
+        state.meta = meta;
+    },
 };
 const actions = {
-    usersList({commit, dispatch}, params) {
-        return service.getUsersList(params).then(({usersList}) => {
-            commit('SET_USERS_LIST', usersList);
+    testimonialsList({commit, dispatch}, params) {
+        return service.getTestimonialsList(params).then(({testimonialsList, meta}) => {
+            commit('SET_TESTIMONIALS_LIST', testimonialsList);
+            commit('SET_META', meta);
         });
     }
 };
 
 const getters = {
-    usersList: state => state.usersList,
+    testimonialsList: state => state.testimonialsList.data,
+    meta: state => state.meta,
 };
 
 
-const testmonials = {
+const testimonials = {
     namespaced: true,
     state,
     getters,
     actions,
     mutations
 };
-export default testmonials;
+export default testimonials;

@@ -19,8 +19,6 @@
     <body>
     <nav>
         <ul>
-            <li><a href="#">Ссылка 1</a></li>
-            <li><a href="#">Ссылка 2</a></li>
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false" v-pre>

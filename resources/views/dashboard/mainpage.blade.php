@@ -1,9 +1,30 @@
 @extends('layouts.dashboardLayout.appDashboardLayout')
 @section('content')
     <main>
-        <h1>Заголовок страницы</h1>
-        <form>
-            <input type="file">
+        <h1 class="text-center">Admin dashboard</h1>
+        <form method="post" action="{{ route('importCSV') }}" class="mx-5 my-5" enctype="multipart/form-data">
+            @csrf
+
+            <div class="row mb-3">
+                <label for="csv_file" class="col-md-4 col-form-label text-md-end">{{ __('Upload csv') }}</label>
+                <div class="col-md-6">
+                    <input id="csv_file" type="file" class="form-control @error('csv_file') is-invalid @enderror"
+                           name="csv_file">
+
+                    @error('csv_file')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
+                </div>
+            </div>
+            <div class="row mb-0">
+                <div class="col-md-8 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('Submit') }}
+                    </button>
+                </div>
+            </div>
         </form>
         <table>
             <thead>

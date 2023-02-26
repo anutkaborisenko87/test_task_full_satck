@@ -52,8 +52,16 @@ reiting stars
     width: 0;
 }
 
+.star-40:before {
+    width: 40%;
+}
+
 .star-50:before {
     width: 50%;
+}
+
+.star-60:before {
+    width: 60%;
 }
 
 .star-30:before {
@@ -68,8 +76,16 @@ reiting stars
     width: 20%;
 }
 
+.star-10:before {
+    width: 10%;
+}
+
 .star-70:before {
     width: 70%;
+}
+
+.star-90:before {
+    width: 90%;
 }
 
 .star-100:before {
@@ -151,6 +167,7 @@ comments
     -webkit-line-clamp: 5; /* задаем желаемое количество строк, в данном случае - 2 */
     -webkit-box-orient: vertical;
     max-height: 10rem;
+    min-height: 10rem;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: justify;

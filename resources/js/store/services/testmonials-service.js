@@ -1,13 +1,18 @@
 import axios from 'axios';
 
 
-function getUsersList() {
-    return axios.get(`/api/users`).then((response) => {
+function getTestimonialsList(params) {
+    let url = `/api/testimonials`;
+    if (params !== '') {
+        url = params.replace('http://testtaskfullstack', '')
+    }
+    return axios.get(url).then((response) => {
         return {
-            usersList: response.data,
+            testimonialsList: response.data,
+            meta: response.data.meta,
         };
     })
 }
 export default {
-    getUsersList
+    getTestimonialsList
 };
