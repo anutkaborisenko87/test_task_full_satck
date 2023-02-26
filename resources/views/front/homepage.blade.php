@@ -60,9 +60,6 @@
             </div>
         </div>
     </div>
-    <div class="testimonials_title text-center">
-        <h1>Testimonials</h1>
-    </div>
     <div id="app">
         <testimonial-list-component></testimonial-list-component>
     </div>

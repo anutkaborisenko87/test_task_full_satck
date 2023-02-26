@@ -23,4 +23,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'is_admin'])->prefix('/dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/import_csv', [TestimonialController::class, 'importCsv'])->name('importCSV');
+    Route::post('/clear_testimonials', [TestimonialController::class, 'clear'])->name('clearTestimonials');
 });

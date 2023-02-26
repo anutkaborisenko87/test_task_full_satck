@@ -45,4 +45,9 @@ class TestimonialController extends Controller
         return new TestimonialCollection($testimonials);
 
     }
+
+    public function clear(Request $request) {
+        Testimonial::truncate();
+        return redirect()->back()->with('success', 'Testimonials cleared');
+    }
 }

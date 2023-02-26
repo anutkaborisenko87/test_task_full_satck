@@ -2,6 +2,11 @@
 @section('content')
     <main>
         <h1 class="text-center">Admin dashboard</h1>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <form method="post" action="{{ route('importCSV') }}" class="mx-5 my-5" enctype="multipart/form-data">
             @csrf
 
@@ -21,36 +26,22 @@
             <div class="row mb-0">
                 <div class="col-md-8 offset-md-4">
                     <button type="submit" class="btn btn-primary">
-                        {{ __('Submit') }}
+                        {{ __('Import') }}
                     </button>
                 </div>
             </div>
         </form>
-        <table>
-            <thead>
-            <tr>
-                <th>Заголовок колонки 1</th>
-                <th>Заголовок колонки 2</th>
-                <th>Заголовок колонки 3</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Ячейка 1</td>
-                <td>Ячейка 2</td>
-                <td>Ячейка 3</td>
-            </tr>
-            <tr>
-                <td>Ячейка 4</td>
-                <td>Ячейка 5</td>
-                <td>Ячейка 6</td>
-            </tr>
-            <tr>
-                <td>Ячейка 7</td>
-                <td>Ячейка 8</td>
-                <td>Ячейка 9</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="row mb-0">
+            <div class="col-md-8 offset-md-4">
+                <button class="btn btn-danger" type="button"
+                   onclick="event.preventDefault(); if (confirm('Do you realy want to clear table?')) document.getElementById('clear-form').submit();">
+                    {{ __('Clear') }}
+                </button>
+
+                <form id="clear-form" action="{{ route('clearTestimonials') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </div>
     </main>
 @endsection

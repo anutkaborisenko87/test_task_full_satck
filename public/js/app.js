@@ -5629,6 +5629,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5676,9 +5679,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         return 'star-' + decimalPart.toString().slice(-1) + '0';
       }
       return '';
-    },
-    showData: function showData(link) {
-      console.log(link);
     }
   },
   mounted: function mounted() {
@@ -5717,11 +5717,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.baseURL = process.env.URL_API;
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
 
-
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('testimonial-list-component', (__webpack_require__(/*! ./components/TestimonialsList.vue */ "./resources/js/components/TestimonialsList.vue")["default"]));
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-// Vue.component('comment-component', require('./components/CommentComponent').default);
 
 /**
  * The following block of code may be used to automatically register your
@@ -28670,6 +28666,12 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm.testimonials.length > 0
+      ? _c("div", { staticClass: "testimonials_title text-center" }, [
+          _c("h1", [_vm._v("Testimonials")]),
+        ])
+      : _vm._e(),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "comments" },
@@ -28777,7 +28779,7 @@ var render = function () {
       2
     ),
     _vm._v(" "),
-    _vm.pagination !== null
+    _vm.pagination !== null && _vm.testimonials.length > 0
       ? _c("div", [
           _c(
             "div",

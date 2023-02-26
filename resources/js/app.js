@@ -9,10 +9,7 @@ window.Vue = require('vue').default;
 
 import store from "./store"
 
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('testimonial-list-component', require('./components/TestimonialsList.vue').default);
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-// Vue.component('comment-component', require('./components/CommentComponent').default);
 
 /**
  * The following block of code may be used to automatically register your

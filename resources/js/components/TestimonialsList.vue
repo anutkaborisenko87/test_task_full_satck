@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div v-if="testimonials.length > 0" class="testimonials_title text-center">
+            <h1>Testimonials</h1>
+        </div>
         <div class="comments">
             <template v-if="testimonials.length > 0">
                 <div v-for="comment of testimonials" :key="comment.id" class="comment_block">
@@ -31,7 +34,7 @@
                 </div>
             </template>
         </div>
-        <div v-if="pagination !== null">
+        <div v-if="pagination !== null && testimonials.length > 0">
             <div class="pagination">
                 <template v-for="link of pagination.links">
                     <a href="#" class="prev"
@@ -78,9 +81,6 @@ export default {
                 return 'star-' + decimalPart.toString().slice(-1) + '0';
             }
             return '';
-        },
-        showData(link) {
-            console.log(link)
         }
     },
     async mounted() {
