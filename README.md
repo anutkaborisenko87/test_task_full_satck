@@ -11,10 +11,6 @@ Author Anna Borisenko
 
  - **link:** {your_domain}/dashboard
 
-## Not implemented
-
-- pagination layout that would hide part of the pages. (the developer did not have enough experience to implement this moment)
-
 ### Contacts 
 
 - **Linkedin: [Anna Borisenko](https://www.linkedin.com/in/anna-borisenko-695837213/)**

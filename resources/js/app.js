@@ -10,6 +10,7 @@ window.Vue = require('vue').default;
 import store from "./store"
 
 Vue.component('testimonial-list-component', require('./components/TestimonialsList.vue').default);
+Vue.component('pagination', require('./components/Pagination.vue').default);
 
 /**
  * The following block of code may be used to automatically register your

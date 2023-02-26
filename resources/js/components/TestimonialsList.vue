@@ -35,23 +35,12 @@
             </template>
         </div>
         <div v-if="pagination !== null && testimonials.length > 0">
-            <div class="pagination">
-                <template v-for="link of pagination.links">
-                    <a href="#" class="prev"
-                       v-if="link.label.includes('Previous') && link.url !== null"
-                       @click="getList(link.url)"
-                    >
-                        <span class="icon-ArrowLeft"></span>
-                    </a>
-                    <a href="#" class="page"
-                       v-else-if="!link.label.includes('Previous') && !link.label.includes('Next') && link.url !== null"
-                       @click="getList(link.url)"
-                       :class="link.active ? 'active' : ''">{{ link.label }}</a>
-                </template>
-                <a href="#" class="next" v-if="pagination.current_page < pagination.last_page"><span
-                    class="icon-ArrowRight"></span></a>
-            </div>
+            <pagination :currentPage="pagination.current_page"
+                        :totalPages="pagination.last_page"
+                        @page-changed="getList($event)"
+            ></pagination>
         </div>
+
     </div>
 
 </template>
